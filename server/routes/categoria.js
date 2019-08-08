@@ -87,7 +87,7 @@ app.post("/categoria", [verificaToken,verificaRole], (req, res) => {
 //actualizar una categoria
 app.put("/categoria/:id",[verificaToken,verificaRole],(req,res)=>{
     let id = req.params.id
-    let body = _.pick(req.body,["descripcion"])
+    let body = _.pickD
     Categoria.findByIdAndUpdate(id,body,{new:true},(err,categoriaDB)=>{
         if(err){
             return res.status(500).json({
