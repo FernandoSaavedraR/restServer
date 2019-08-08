@@ -101,7 +101,7 @@ app.post("/google", async (req, res) => {
       let usuario = new Usuario();
       usuario.nombre = googleUser.nombre;
       usuario.email = googleUser.email;
-      usuario.img = googleUser.picture;
+      usuario.img = googleUser.img;
       usuario.google = true;
       usuario.password = bcrypt.hashSync("hash de 10 vueltas", 10);
       usuario.save((err, usuarioDB) => {
@@ -119,13 +119,13 @@ app.post("/google", async (req, res) => {
         );
         res.json({
           ok: true,
-          usuario: usuarioDB,
-          token
+          usuario: googleUser,
+          //token
         });
       });
     }
   });
-  //res.json({usuario:googleUser});
+  // res.json({usuario:googleUser});
 });
 
 module.exports = app;

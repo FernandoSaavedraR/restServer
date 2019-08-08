@@ -12,18 +12,19 @@
     />
   </head>
   <body>
+    <!--<img src="http://localhost:3000/imagen/usuarios/5d44bcaaea43682584d1e88e-321.jpg?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7InJvbGUiOiJBRE1JTl9ST0xFIiwiZXN0YWRvIjp0cnVlLCJnb29nbGUiOmZhbHNlLCJfaWQiOiI1ZDQ0YmNhYWVhNDM2ODI1ODRkMWU4OGUiLCJub21icmUiOiJUZXN0IDIiLCJlbWFpbCI6InRlc3QyQGdtYWlsLmNvbSIsIl9fdiI6MH0sImlhdCI6MTU2NTIyNjYwMiwiZXhwIjoxNTY1Mzk5NDAyfQ.N6E7Qt-w_dBVDMw5u9wJyKr1m54QbL4wvygNjhkw7tU" alt=""> -->
     <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <div>
-      <a href="#" onclick="signOut();">Sign out</a>
-      <script>
-        function signOut() {
-          var auth2 = gapi.auth2.getAuthInstance();
-          auth2.signOut().then(function() {
-            console.log("User signed out.");
-          });
-        }
-      </script>
-    </div>
+
+    <a href="#" onclick="signOut();">Sign out</a>
+    <script>
+      function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function() {
+          console.log("User signed out.");
+        });
+      }
+    </script>
+
     <script>
       function onSignIn(googleUser) {
         var profile = googleUser.getBasicProfile();
